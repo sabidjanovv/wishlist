@@ -44,16 +44,18 @@ const Products = ({ data, title }) => {
         <button
           onClick={() => handleLike(product)}
           className="absolute top-3 right-3 text-xl"
+          style={{ color: "green" }} // FaRegHeart va FaHeart uchun yashil rang
         >
           {wishlist?.some((item) => item.id === product.id) ? (
-            <FaHeart />
+            <FaHeart style={{ color: "green" }} />
           ) : (
-            <FaRegHeart />
+            <FaRegHeart style={{ color: "green" }} />
           )}
         </button>
         <button
           onClick={() => handleAddToCart(product)}
           className="absolute top-10 right-3 text-xl"
+          style={{ color: "green" }} // IoCartOutline uchun yashil rang
         >
           <IoCartOutline />
         </button>

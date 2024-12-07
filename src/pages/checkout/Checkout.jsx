@@ -4,15 +4,14 @@ import { Navigate } from "react-router-dom";
 
 const Checkout = () => {
   const { cart } = useStateValue();
-  const [submissionStatus, setSubmissionStatus] = useState(null); // User feedback
+  const [submissionStatus, setSubmissionStatus] = useState(null); 
 
-  // Redirect if cart is empty
   if (!cart?.length) {
     return <Navigate to="/cart" />;
   }
 
-  const BOT_TOKEN = process.env.BOT_TOKEN;
-  const CHAT_ID = process.env.CHAT_ID;
+  const BOT_TOKEN = "8094110405:AAEEyem7X8OvmUAfcrOGKc_SHlcemtC8brg";
+  const CHAT_ID = "-4659672814";
 
   const fnameRef = useRef(null);
   const lnameRef = useRef(null);
