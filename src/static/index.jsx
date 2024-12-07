@@ -25,3 +25,5 @@ export const LINKS = [
     icon: null,
   },
 ];
+
+export const PROMOCODES = ["SALOM", "LAYLO"];

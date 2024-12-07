@@ -34,7 +34,9 @@ const Header = () => {
 
         <div className="flex items-center gap-6">
           <img src={User} alt="User" className="h-8 cursor-pointer" />
-          <img src={Cart} alt="Cart" className="h-8 cursor-pointer" />
+          <NavLink to="/cart">
+            <img src={Cart} alt="Cart" className="h-8 cursor-pointer" />
+          </NavLink>
         </div>
       </div>
     </header>
