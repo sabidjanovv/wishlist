@@ -11,8 +11,8 @@ const Checkout = () => {
     return <Navigate to="/cart" />;
   }
 
-  const BOT_TOKEN = "8094110405:AAEEyem7X8OvmUAfcrOGKc_SHlcemtC8brg";
-  const CHAT_ID = "-4659672814";
+  const BOT_TOKEN = process.env.BOT_TOKEN;
+  const CHAT_ID = process.env.CHAT_ID;
 
   const fnameRef = useRef(null);
   const lnameRef = useRef(null);
@@ -81,7 +81,6 @@ const Checkout = () => {
         onSubmit={handleSubmit}
         className="max-w-xl mx-auto bg-white p-6 shadow-md rounded-lg"
       >
-        {/* Form Fields */}
         <div className="mb-4">
           <label
             htmlFor="fname"
