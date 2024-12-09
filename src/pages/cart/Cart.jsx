@@ -58,6 +58,7 @@ const Cart = () => {
                 className="flex items-center gap-4 border-b pb-4 mb-4"
               >
                 <img
+                  onClick={() => navigate(`/product/${item.id}`)}
                   src={item.thumbnail}
                   width={100}
                   alt={item.title}
@@ -108,8 +109,9 @@ const Cart = () => {
               <span>Total:</span>
               <span>
                 {(promoStatus.success
-                  ? calculateTotal() * .8
-                  : calculateTotal()).brm()}
+                  ? calculateTotal() * 0.8
+                  : calculateTotal()
+                ).brm()}
                 UZS
               </span>
             </div>

@@ -203,10 +203,7 @@ const Detail = () => {
               <strong>Availability:</strong> {data.availabilityStatus}
             </li>
             <li>
-              <strong>Dimensions:</strong> {data.returnPolicy}
-            </li>
-            <li>
-              <strong>Weight:</strong> 400g
+              <strong>Return:</strong> {data.returnPolicy}
             </li>
           </ul>
         </div>
