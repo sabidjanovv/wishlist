@@ -9,6 +9,7 @@ import NotFound from "../pages/not-found/NotFound";
 import Wishes from "../pages/wishes/Wishes";
 import Cart from "../pages/cart/Cart";
 import Checkout from "../pages/checkout/Checkout";
+import Detail from "../pages/detail/Detail";
 
 const Router = ({data}) => {
   return (
@@ -20,6 +21,7 @@ const Router = ({data}) => {
         <Route path="/wishes" element={<Wishes />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/product/:id" element={<Detail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
       {/* <Route path="/login" element={<Login />} /> */}

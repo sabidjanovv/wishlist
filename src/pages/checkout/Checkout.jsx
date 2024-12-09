@@ -3,7 +3,7 @@ import { useStateValue } from "../../context";
 import { Navigate } from "react-router-dom";
 
 const Checkout = () => {
-  const { cart } = useStateValue();
+  const { cart, setCart } = useStateValue();
   const [submissionStatus, setSubmissionStatus] = useState(null); 
 
   if (!cart?.length) {
@@ -71,6 +71,7 @@ const Checkout = () => {
     }
 
     e.target.reset();
+    // setCart([]); 
   };
 
   return (

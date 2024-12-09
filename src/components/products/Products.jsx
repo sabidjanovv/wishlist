@@ -2,11 +2,13 @@ import React from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useStateValue } from "../../context";
 import { IoCartOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const Products = ({ data, title }) => {
+  const navigate = useNavigate();
   const { setWishlist, wishlist, setCart, cart } = useStateValue();
 
-  // `wishlist` va `cart` uchun bo'sh massivni fallback qilib qo'yamiz
+
   const handleLike = (product) => {
     if (!wishlist || !Array.isArray(wishlist)) {
       console.error("Wishlist mavjud emas yoki massiv emas");
@@ -37,6 +39,7 @@ const Products = ({ data, title }) => {
     <div key={product.id} className="shadow p-3">
       <div className="w-full h-64 relative">
         <img
+          onClick={() => navigate(`/product/${product.id}`)}
           className="w-full h-full object-contain"
           src={product.thumbnail}
           alt=""
@@ -44,7 +47,7 @@ const Products = ({ data, title }) => {
         <button
           onClick={() => handleLike(product)}
           className="absolute top-3 right-3 text-xl"
-          style={{ color: "green" }} // FaRegHeart va FaHeart uchun yashil rang
+          style={{ color: "green" }}
         >
           {wishlist?.some((item) => item.id === product.id) ? (
             <FaHeart style={{ color: "green" }} />
@@ -55,7 +58,7 @@ const Products = ({ data, title }) => {
         <button
           onClick={() => handleAddToCart(product)}
           className="absolute top-10 right-3 text-xl"
-          style={{ color: "green" }} // IoCartOutline uchun yashil rang
+          style={{ color: "green" }} 
         >
           <IoCartOutline />
         </button>
