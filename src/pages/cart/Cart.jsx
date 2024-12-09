@@ -67,7 +67,7 @@ const Cart = () => {
                 <div className="flex-1">
                   <h3 className="font-bold text-lg">{item.title}</h3>
                   <p className="text-gray-600 font-medium mb-2">
-                    {(item.price * item.amount).brm("int", 2)} UZS
+                    {(item.price * item.amount).brm("int", 2)} $
                   </p>
                   <button
                     onClick={() => handleDelete(item)}
@@ -112,7 +112,7 @@ const Cart = () => {
                   ? calculateTotal() * 0.8
                   : calculateTotal()
                 ).brm()}
-                UZS
+                $
               </span>
             </div>
             <Promocode setPromoStatus={setPromoStatus} />
